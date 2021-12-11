@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:test_two/second_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -49,7 +50,7 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Colors.teal,
         title: Text("My First App",
           style: TextStyle(
-              color: Colors.purple,
+              color: Colors.white,
               fontWeight: FontWeight.bold,
               fontSize: 40
           ),
@@ -63,11 +64,11 @@ class _MyHomePageState extends State<MyHomePage> {
                 height: 30,
               ),
               RaisedButton(
-                child: Text(Button1,style: TextStyle(color: Colors.white),),
+                child: Text(Button2,style: TextStyle(color: Colors.white),),
                   color: btnclr1,
                   onPressed: (){
                     setState(() {
-                      Button1 = "Picture is visible";
+                      Button2 = "Picture is visible";
                       btnclr1 = Colors.red;
                       pictureVisibility1 = true;
                     });
@@ -362,6 +363,21 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                   ],
                 ),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Center(
+                child: RaisedButton(
+                    color: Colors.green,
+                    child: Text("Go to Second Page",
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    onPressed:(){
+                      Navigator.push(
+                          context, MaterialPageRoute(
+                          builder: (context)=>SecondPage()));
+                    }),
               ),
             ],
           ),
