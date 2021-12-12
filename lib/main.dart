@@ -30,6 +30,8 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
+    double height = MediaQuery.of(context).size.height;
+    double width = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
         centerTitle:  true,
@@ -44,48 +46,68 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(15.0),
-        child: Column(
-          children: <Widget>[
-            Container(
-              height: 200,
-              width: 200,
-              decoration: BoxDecoration(
-                border: Border.all(
-                  color: Colors.deepPurpleAccent,
-                  width: 3
+        child: SingleChildScrollView(
+          child: Column(
+            children: <Widget>[
+              /*Container(
+                height: 200,
+                width: 200,
+                decoration: BoxDecoration(
+                  border: Border.all(
+                      color: Colors.deepPurpleAccent,
+                      width: 3
+                  ),
+                  ),
+                child: Image.asset("assets/images/image-02.jpg",fit: BoxFit.cover),
+              ),*/
+              Container(
+                height: width*0.2,
+                width: width*0.2,
+                decoration: BoxDecoration(
+                  border: Border.all(
+                      color: Colors.deepPurpleAccent,
+                      width: 3
+                  ),
+                  borderRadius: BorderRadius.circular(360),
+                  image: DecorationImage(
+                      image: AssetImage("assets/images/image-02.jpg")
+
+                  ),
                 ),
+                child: Image.asset("assets/images/image-02.jpg",fit: BoxFit.cover),
               ),
-                child: Image.asset("assets/images/image-02.jpg",fit: BoxFit.cover,)),
-            Padding(
-              padding: const EdgeInsets.all(15.0),
-              child: TextField(
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(),
-                  labelText: 'User Name',
-                  hintText: 'Enter Your Name'
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(15.0),
-              child: TextField(
-                decoration: InputDecoration(
+
+              Padding(
+                padding: const EdgeInsets.all(15.0),
+                child: TextField(
+                  decoration: InputDecoration(
                     border: OutlineInputBorder(),
-                    labelText: 'Password',
-                    hintText: 'Enter Password'
+                    labelText: 'User Name',
+                    hintText: 'Enter Your Name'
+                  ),
                 ),
               ),
-            ),
-            RaisedButton(
-              color: Colors.lightBlue,
-              child: Text("Sign In",
-              style: TextStyle(color: Colors.white),),
-                onPressed: (){
-                Navigator.push(
-                    context, MaterialPageRoute(
-                    builder: (context)=>FirstPage()));
-            }),
-          ],
+              Padding(
+                padding: const EdgeInsets.all(15.0),
+                child: TextField(
+                  decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      labelText: 'Password',
+                      hintText: 'Enter Password'
+                  ),
+                ),
+              ),
+              RaisedButton(
+                color: Colors.lightBlue,
+                child: Text("Sign In",
+                style: TextStyle(color: Colors.white),),
+                  onPressed: (){
+                  Navigator.push(
+                      context, MaterialPageRoute(
+                      builder: (context)=>FirstPage()));
+              }),
+            ],
+          ),
         ),
       )
     );
