@@ -39,8 +39,8 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text("My First App",
           style: TextStyle(
               color: Colors.white,
-              fontWeight: FontWeight.bold,
-              fontSize: 40
+             fontWeight: FontWeight.bold,
+              fontSize: 30
           ),
         ),
       ),
@@ -49,32 +49,20 @@ class _MyHomePageState extends State<MyHomePage> {
         child: SingleChildScrollView(
           child: Column(
             children: <Widget>[
-              /*Container(
-                height: 200,
-                width: 200,
-                decoration: BoxDecoration(
-                  border: Border.all(
-                      color: Colors.deepPurpleAccent,
-                      width: 3
-                  ),
-                  ),
-                child: Image.asset("assets/images/image-02.jpg",fit: BoxFit.cover),
-              ),*/
               Container(
-                height: width*0.2,
-                width: width*0.2,
+                height: width*0.3,
+                width: width*0.3,
                 decoration: BoxDecoration(
                   border: Border.all(
                       color: Colors.deepPurpleAccent,
-                      width: 3
+                      width: 4
                   ),
-                  borderRadius: BorderRadius.circular(360),
+                  borderRadius: BorderRadius.circular(180),
                   image: DecorationImage(
-                      image: AssetImage("assets/images/image-02.jpg")
-
+                      image: NetworkImage("https://cdn.pixabay.com/photo/2020/07/14/13/07/icon-5404125_960_720.png")
                   ),
                 ),
-                child: Image.asset("assets/images/image-02.jpg",fit: BoxFit.cover),
+                //child: Image.asset("assets/images/image-02.jpg",fit: BoxFit.cover),
               ),
 
               Padding(
@@ -95,6 +83,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       labelText: 'Password',
                       hintText: 'Enter Password'
                   ),
+                  obscureText: true,
                 ),
               ),
               RaisedButton(
